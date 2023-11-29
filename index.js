@@ -26,9 +26,10 @@ const questions = [{
           type: "input"
      }];
 
+
 function chooseLogoShape(logoText, logoTextColor, logoShape, logoShapeColor) {
      if (logoShape.toLowerCase() === "rectangle") {
-          const createRectange = new Rectangle("200", "300", logoShapeColor, logoTextColor);
+          const createRectange = new Rectangle("200", "300", logoShapeColor, logoTextColor, logoText);
           const shapeSVG = createRectange.render();
           return shapeSVG;
      }
