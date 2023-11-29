@@ -1,4 +1,4 @@
-const Shapes = require("./lib/shape.js");
+const Rectangle = require("./lib/shape.js");
 const inquirer = require("inquirer");
 const fs = require('fs');
 
@@ -31,4 +31,14 @@ inquirer
      .prompt(questions)
      .then((answers) => {
           console.log(answers.logoText);
+          const createRectange = new Rectangle("200", "200", "blue", "white");
+          const vs = createRectange.render();
+
+          console.log("Print the value==" + vs);
+
+          fs.writeFile("logo.svg", vs, (err) =>
+               err ? console.error(err) : console.log('Success!')
+          );
+
+          console.log("Print the value=222=" + vs);
      });
