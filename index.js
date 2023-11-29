@@ -26,19 +26,24 @@ const questions = [{
           type: "input"
      }];
 
+function chooseLogoShape(logoText, logoTextColor, logoShape, logoShapeColor) {
+     if (logoShape.toLowerCase() === "rectangle") {
+          const createRectange = new Rectangle("200", "300", logoShapeColor, logoTextColor);
+          const shapeSVG = createRectange.render();
+          return shapeSVG;
+     }
+}
 
 inquirer
      .prompt(questions)
      .then((answers) => {
           console.log(answers.logoText);
-          const createRectange = new Rectangle("200", "200", "blue", "white");
-          const vs = createRectange.render();
+          const newLogo = chooseLogoShape(answers.logoText, answers.logoTextColor, answers.logoShape, answers.logoShapeColor);
 
-          console.log("Print the value==" + vs);
+          console.log("Print the value==" + newLogo);
 
-          fs.writeFile("logo.svg", vs, (err) =>
+          fs.writeFile("logo.svg", newLogo, (err) =>
                err ? console.error(err) : console.log('Success!')
           );
-
-          console.log("Print the value=222=" + vs);
+          console.log("Print the value=222=" + newLogo);
      });
