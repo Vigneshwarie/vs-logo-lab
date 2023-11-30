@@ -39,7 +39,7 @@ function chooseLogoShape(logoText, logoTextColor, logoShape, logoShapeColor) {
           return shapeSVG;
      }
      else {
-          const createCircle = new Circle("75", logoShapeColor, logoTextColor, logoText);
+          const createCircle = new Circle("90", logoShapeColor, logoTextColor, logoText);
           const shapeSVG = createCircle.render();
           return shapeSVG;
      }
