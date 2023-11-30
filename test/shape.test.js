@@ -29,3 +29,32 @@ describe('Square', () => {
   });
 });
 
+// This blocks test the circle functionality
+describe('Circle', () => {
+  describe('render', () => {
+    it('should return circle', () => {
+          const myCircle = `<svg width="300" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="150" cy="100" r="90" stroke="black" fill="Red" stroke-width="4"/>
+                    <text x="150" y="105" dominant-baseline="middle" text-anchor="middle" font-size="40" fill="White">SVG</text>   
+                    </svg>`;
+         const createCircle = new Circle("90", "Red", "White", "SVG");
+          expect(createCircle.render()).toEqual(myCircle);
+    });
+  });
+});
+
+// This blocks test the triangle functionality
+describe('Triangle', () => {
+  describe('render', () => {
+    it('should return triangle', () => {
+          const myTriangle = `<svg width="300" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="150, 3 250, 190 37, 190" fill="Orange" stroke="black" stroke-width="4"/>
+                    <text x="150" y="126" text-anchor="middle" font-size="40" fill="White">SVG</text>
+                    </svg>`;
+         const createTriangle = new Triangle("Orange", "White", "SVG");
+          expect(createTriangle.render()).toEqual(myTriangle);
+    });
+  });
+});
+
+
