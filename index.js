@@ -1,4 +1,4 @@
-const Rectangle = require("./lib/shape.js");
+const { Rectangle, Square, Circle } = require("./lib/shape.js");
 const inquirer = require("inquirer");
 const fs = require('fs');
 
@@ -29,8 +29,18 @@ const questions = [{
 
 function chooseLogoShape(logoText, logoTextColor, logoShape, logoShapeColor) {
      if (logoShape.toLowerCase() === "rectangle") {
-          const createRectange = new Rectangle("200", "300", logoShapeColor, logoTextColor, logoText);
+          const createRectange = new Rectangle("150", "200", logoShapeColor, logoTextColor, logoText);
           const shapeSVG = createRectange.render();
+          return shapeSVG;
+     }
+     else if (logoShape.toLowerCase() === "square") {
+          const createSquare = new Square("150", logoShapeColor, logoTextColor, logoText);
+          const shapeSVG = createSquare.render();
+          return shapeSVG;
+     }
+     else {
+          const createCircle = new Circle("75", logoShapeColor, logoTextColor, logoText);
+          const shapeSVG = createCircle.render();
           return shapeSVG;
      }
 }
