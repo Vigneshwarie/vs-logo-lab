@@ -1,4 +1,4 @@
-const { Rectangle, Square, Circle } = require("./lib/shape.js");
+const { Rectangle, Square, Circle, Triangle } = require("./lib/shape.js");
 const inquirer = require("inquirer");
 const fs = require('fs');
 
@@ -18,7 +18,8 @@ const questions = [{
           type: "list",
           choices: ["Square",
                "Rectangle",
-               "Circle"]
+               "Circle",
+               "Triangle"]
      },
      {
           name: "logoShapeColor",
@@ -38,9 +39,14 @@ function chooseLogoShape(logoText, logoTextColor, logoShape, logoShapeColor) {
           const shapeSVG = createSquare.render();
           return shapeSVG;
      }
-     else {
+     else if (logoShape.toLowerCase() === "circle") {
           const createCircle = new Circle("90", logoShapeColor, logoTextColor, logoText);
           const shapeSVG = createCircle.render();
+          return shapeSVG;
+     } 
+     else {
+          const createTriangle = new Triangle(logoShapeColor, logoTextColor, logoText);
+          const shapeSVG = createTriangle.render();
           return shapeSVG;
      }
 }
@@ -48,10 +54,7 @@ function chooseLogoShape(logoText, logoTextColor, logoShape, logoShapeColor) {
 inquirer
      .prompt(questions)
      .then((answers) => {
-          console.log(answers.logoText);
           const newLogo = chooseLogoShape(answers.logoText, answers.logoTextColor, answers.logoShape, answers.logoShapeColor);
-
-          console.log("Print the value==" + newLogo);
 
           fs.writeFile("logo.svg", newLogo, (err) =>
                err ? console.error(err) : console.log('Success!')
