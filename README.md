@@ -35,7 +35,7 @@ On success, the result is produced as below.
 
 ## Walkthrough Video
 
-[![Watch the video](https://github.com/Vigneshwarie/vs-logo-lab/blob/main/assets/video/VSambandamChallenge10.mp4)]
+[![Watch the video](assets/images/LogoGeneratorVideoSS.png)](https://github.com/Vigneshwarie/vs-logo-lab/blob/main/assets/video/VSambandamChallenge10.mp4)
 
 ## Credits
 
