@@ -1,4 +1,4 @@
 <svg width="300" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="150" cy="100" r="90" stroke="black" fill="Red" stroke-width="4"/>
-                    <text x="150" y="105" dominant-baseline="middle" text-anchor="middle" font-size="40" fill="White">Hello</text>   
+                    <circle cx="150" cy="100" r="90" stroke="black" fill="Blue" stroke-width="4"/>
+                    <text x="150" y="105" dominant-baseline="middle" text-anchor="middle" font-size="40" fill="White">hello</text>   
                     </svg>

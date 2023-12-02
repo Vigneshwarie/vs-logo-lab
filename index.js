@@ -59,5 +59,4 @@ inquirer
           fs.writeFile("logo.svg", newLogo, (err) =>
                err ? console.error(err) : console.log('Success!')
           );
-          console.log("Print the value=222=" + newLogo);
      });
